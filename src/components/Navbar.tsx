@@ -34,7 +34,6 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
@@ -51,11 +50,11 @@ const Navbar = () => {
           : "bg-transparent py-4"
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div className="max-w-7xl mx-auto px-1.5rem sm:px-1.5rem lg:px-1.5rem ">
         <div className="flex items-center justify-between h-14">
           <div className="flex items-center">
             <a href="/">
-              <span className="text-xl font-bold text-primary">AZ.</span>
+              <span className="text-xl font-bold text-primary">Home</span>
             </a>
           </div>
 
@@ -78,7 +77,7 @@ const Navbar = () => {
                 asChild
                 onClick={handledownload}
               >
-                <a href={resumeUrl} download="Aathif_Zahir_CV.pdf">
+                <a href={resumeUrl} download="Mithilesh_Watane_CV.pdf">
                   Resume
                 </a>
               </Button>
@@ -142,7 +141,7 @@ const Navbar = () => {
               </a>
             ))}
             <Button size="sm" className="ml-3 mt-2" asChild>
-              <a href={resumeUrl} download="Aathif_Zahir_CV.pdf">
+              <a href={resumeUrl} download="Mithilesh_Watane_CV.pdf">
                 Resume
               </a>
             </Button>

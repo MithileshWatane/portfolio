@@ -96,15 +96,15 @@ const AboutSection = () => {
                       Education
                     </h3>
                     <div className="space-y-2">
-                      <p className="font-medium">BSc in Software Engineering</p>
+                      <p className="font-medium">BE in Computer Science and Engineering</p>
                       <p className="text-sm text-muted-foreground">
-                        SLIIT (Sri Lanka Institute of Information Technology)
+                         Sipna College Of Engineering And Technology
                       </p>
                       <p className="text-sm text-muted-foreground">
                         2022 - Present
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        Dean's List (2023)
+                        9.02 CGPA
                       </p>
                     </div>
                   </CardContent>
@@ -167,21 +167,19 @@ const AboutSection = () => {
               <Avatar className="w-40 h-40 border-4 border-primary/20">
                 <AvatarImage
                   src="/imgs/me.png"
-                  alt="Aathif Zahir"
+                  alt="Mithilesh Watane"
                   loading="lazy"
                 />
-                <AvatarFallback>AZ</AvatarFallback>
+                <AvatarFallback>MW</AvatarFallback>
               </Avatar>
-              <div className="absolute -bottom-2 -right-2 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
-                3.41 GPA
-              </div>
+              
             </motion.div>
 
             <motion.div
               variants={itemVariants}
               className="text-center lg:text-left"
             >
-              <h3 className="text-2xl font-bold">Aathif Zahir</h3>
+              <h3 className="text-2xl font-bold">Mithilesh Watane</h3>
               <p className="text-muted-foreground">
                 Software Engineering Student
               </p>
@@ -211,7 +209,7 @@ const AboutSection = () => {
               whileTap={{ scale: 0.98 }}
             >
               <Button className="gap-2" asChild onClick={handledownload}>
-                <a href={resumeUrl} download="Aathif_Zahir_CV.pdf">
+                <a href={resumeUrl} download="Mithilesh_Watane_CV.pdf">
                   <Download className="w-4 h-4" />
                   Download Resume
                 </a>

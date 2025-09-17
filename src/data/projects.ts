@@ -19,7 +19,7 @@ export const projects: Project[] = [
     image: "/imgs/p4.png",
     tags: ["Python", "Scrapy", "MongoDB", "Data Mining"],
     links: {
-      github: "https://github.com/AathifZahir/Py-Scrap",
+      github: "https://github.com/MithileshWatane/Py-Scrap",
       live: "",
     },
   },
@@ -30,7 +30,7 @@ export const projects: Project[] = [
     image: "/imgs/p1.png",
     tags: ["React", "Node.js", "Express", "MongoDB"],
     links: {
-      github: "https://github.com/AathifZahir/MSR-ITP",
+      github: "https://github.com/MithileshWatane/MSR-ITP",
       live: "",
     },
   },
@@ -41,7 +41,7 @@ export const projects: Project[] = [
     image: "/imgs/p2.png",
     tags: ["React Native", "Firebase", "Authentication", "Cloud Functions"],
     links: {
-      github: "https://github.com/AathifZahir/ProIntern",
+      github: "https://github.com/MithileshWatane/ProIntern",
       live: ""
     },
   },
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     image: "/imgs/p3.png",
     tags: ["React", "Tailwind CSS", "Redux", "Firebase"],
     links: {
-      github: "https://github.com/AathifZahir/Minders",
+      github: "https://github.com/MithileshWatane/Minders",
       live: "https://minders-sigma.vercel.app/",
     },
   },

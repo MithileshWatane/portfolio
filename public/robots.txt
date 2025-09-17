@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://aathifzahir.com/sitemap.xml
+Sitemap: https://MithileshWatane.com/sitemap.xml
