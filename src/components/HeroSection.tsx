@@ -5,6 +5,7 @@ const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [typedText, setTypedText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTyping, setIsTyping] = useState(true);
   
   const roles = ['Full-Stack Developer', 'Software Engineer', 'Problem Solver', 'Tech Enthusiast'];
   
@@ -18,22 +19,36 @@ const HeroSection = () => {
   }, []);
 
   useEffect(() => {
+    let timeoutId;
     const currentRole = roles[currentIndex];
-    const typeText = async () => {
-      for (let i = 0; i <= currentRole.length; i++) {
-        setTypedText(currentRole.slice(0, i));
-        await new Promise(resolve => setTimeout(resolve, 100));
-      }
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      for (let i = currentRole.length; i >= 0; i--) {
-        setTypedText(currentRole.slice(0, i));
-        await new Promise(resolve => setTimeout(resolve, 50));
-      }
-      setCurrentIndex((prev) => (prev + 1) % roles.length);
-    };
     
-    typeText();
-  }, [currentIndex]);
+    const typeText = () => {
+      if (isTyping) {
+        // Typing forward
+        if (typedText.length < currentRole.length) {
+          setTypedText(currentRole.slice(0, typedText.length + 1));
+          timeoutId = setTimeout(typeText, 80); // Faster typing
+        } else {
+          // Pause at full text
+          timeoutId = setTimeout(() => setIsTyping(false), 1500);
+        }
+      } else {
+        // Typing backward (erasing)
+        if (typedText.length > 0) {
+          setTypedText(typedText.slice(0, -1));
+          timeoutId = setTimeout(typeText, 40); // Faster erasing
+        } else {
+          // Move to next role
+          setCurrentIndex((prev) => (prev + 1) % roles.length);
+          setIsTyping(true);
+        }
+      }
+    };
+
+    timeoutId = setTimeout(typeText, 100);
+    
+    return () => clearTimeout(timeoutId);
+  }, [typedText, currentIndex, isTyping, roles]);
 
   const Links = {
     github: "https://github.com/MithileshWatane",
@@ -44,20 +59,12 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center pt-16 overflow-hidden bg-black">
-      {/* Dynamic Gradient Background */}
-      <div 
-        className="absolute inset-0 opacity-30"
-        style={{
-          background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.4) 0%, transparent 50%)`
-        }}
-      />
-
-      {/* Geometric Shapes */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-sky-500/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-full blur-3xl animate-bounce" style={{ animationDuration: '3s' }} />
+      {/* Subtle Geometric Shapes - No blue spots */}
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-gray-800/10 to-gray-700/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-gradient-to-r from-gray-700/10 to-gray-600/10 rounded-full blur-3xl animate-bounce" style={{ animationDuration: '3s' }} />
       
-      {/* Rotating Ring */}
-      <div className="absolute top-1/2 right-1/3 w-32 h-32 border-2 border-blue-500/30 rounded-full" style={{ animation: 'spin 10s linear infinite' }} />
+      {/* Rotating Ring - Changed to subtle gray */}
+      <div className="absolute top-1/2 right-1/3 w-32 h-32 border-2 border-gray-700/20 rounded-full" style={{ animation: 'spin 10s linear infinite' }} />
 
       <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
         {/* Left Content */}
@@ -78,9 +85,9 @@ const HeroSection = () => {
             </span>
           </h1>
 
-          {/* Typed Role */}
+          {/* Typed Role - Fixed animation */}
           <div className="text-2xl md:text-3xl text-gray-300 font-light h-12 flex items-center justify-center lg:justify-start">
-            <span>{typedText}</span>
+            <span className="min-w-0">{typedText}</span>
             <span className="ml-1 w-0.5 h-8 bg-blue-400 animate-pulse" />
           </div>
 

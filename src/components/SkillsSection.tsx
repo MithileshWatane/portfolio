@@ -39,7 +39,7 @@ const SkillsSection = () => {
   };
 
   return (
-    <section id="skills" className=" bg-background">
+    <section id="skills" className="bg-background">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -49,7 +49,7 @@ const SkillsSection = () => {
         >
           <h2 className="section-heading">Skills</h2>
           <p className="text-muted-foreground max-w-2xl mb-12">
-            I've worked with a range of technologies in the web development
+            I've worked with a range of technologies in the Software development
             world, from frontend to backend and everything in between.
           </p>
         </motion.div>

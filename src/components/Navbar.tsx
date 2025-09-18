@@ -11,12 +11,7 @@ const Navbar = () => {
   const resumeUrl = Links.resume;
   const { toast } = useToast();
 
-  const handledownload = () => {
-    toast({
-      title: "Downloading Resume",
-      description: "Your download will start shortly.",
-    });
-  };
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,7 +70,7 @@ const Navbar = () => {
                 size="sm"
                 className="ml-4"
                 asChild
-                onClick={handledownload}
+                
               >
                 <a href={resumeUrl} download="Mithilesh_Watane_CV.pdf">
                   Resume
@@ -141,7 +136,7 @@ const Navbar = () => {
               </a>
             ))}
             <Button size="sm" className="ml-3 mt-2" asChild>
-              <a href={resumeUrl} download="Mithilesh_Watane_CV.pdf">
+              <a href={resumeUrl} >
                 Resume
               </a>
             </Button>

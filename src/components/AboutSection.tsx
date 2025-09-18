@@ -126,19 +126,19 @@ const AboutSection = () => {
                     <div className="space-y-4">
                       <div>
                         <p className="font-medium">
-                          Full Stack Developer Intern
+                          Software Development Intern
                         </p>
                         <p className="text-sm text-muted-foreground">
-                          Twist Digital
+                          HashedBit Innovations
                         </p>
                         <p className="text-sm text-muted-foreground">
-                          Since March 2025
+                          May 2024- Aug 2024
                         </p>
                       </div>
                       <div>
-                        <p className="font-medium">Graphic Designer</p>
+                        <p className="font-medium">MERN Stack Developer</p>
                         <p className="text-sm text-muted-foreground">
-                          SLIIT Media Unit
+                          Edunet Foundation
                         </p>
                         <p className="text-sm text-muted-foreground">
                           Freelance
@@ -181,7 +181,7 @@ const AboutSection = () => {
             >
               <h3 className="text-2xl font-bold">Mithilesh Watane</h3>
               <p className="text-muted-foreground">
-                Software Engineering Student
+                Software Engineer
               </p>
             </motion.div>
 
@@ -190,16 +190,22 @@ const AboutSection = () => {
               className="flex flex-wrap gap-2 justify-center lg:justify-start"
             >
               <Badge variant="outline" className="bg-primary/10">
-                React
+                Java
               </Badge>
               <Badge variant="outline" className="bg-primary/10">
-                Node
+                MERN Stack
+              </Badge>
+               <Badge variant="outline" className="bg-primary/10">
+                Python
               </Badge>
               <Badge variant="outline" className="bg-primary/10">
-                UI/UX
+                SQL
               </Badge>
               <Badge variant="outline" className="bg-primary/10">
-                Full Stack
+                Full Stack Development
+              </Badge>
+               <Badge variant="outline" className="bg-primary/10">
+                DSA
               </Badge>
             </motion.div>
 
@@ -208,10 +214,9 @@ const AboutSection = () => {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
             >
-              <Button className="gap-2" asChild onClick={handledownload}>
-                <a href={resumeUrl} download="Mithilesh_Watane_CV.pdf">
-                  <Download className="w-4 h-4" />
-                  Download Resume
+              <Button className="gap-2" asChild >
+                <a href={resumeUrl} download="Mithilesh_Watane_Resume.pdf">
+                  View Resume
                 </a>
               </Button>
             </motion.div>
